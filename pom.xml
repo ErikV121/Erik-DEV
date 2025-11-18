@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>Erik-Dev</name>
     <description>Erik-Dev</description>
+    <packaging>jar</packaging>
     <url/>
     <licenses>
         <license/>
@@ -27,8 +28,8 @@
         <url/>
     </scm>
     <properties>
-        <java.version>25</java.version>
-        <node.version>v22.22.0</node.version>
+        <java.version>23</java.version>
+        <node.version>v22.20.0</node.version>
         <npm.version>11.6.2</npm.version>
     </properties>
     <dependencies>
@@ -46,6 +47,10 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
