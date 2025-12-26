@@ -1,482 +1,515 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-
+<! DOCTYPE html>
+<html lang="en" xmlns: th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erik DEV</title>
-    <link rel="stylesheet" th:href="@{/main.css}">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        nav.sticky-nav {
-            position: sticky;
-            position: -webkit-sticky;
-            top: 0;
-            z-index: 1000;
-        }
-    </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Erik Dev </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" th:href="@{/main.css}" href="/main.css">
+    <link rel="stylesheet" th:href="@{/custom.css}" href="/custom.css">
 </head>
 
-<body class="bg-white text-gray-900 antialiased">
-<!-- Header and Navigation -->
-<nav class="sticky-nav bg-white border-b border-gray-200 mb-16 shadow-sm">
-    <div class="max-w-4xl mx-auto px-6 py-5">
-        <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex-shrink-0">
-                <img th:src="@{/Erik_DEV.svg}" alt="Erik DEV Logo" class="h-10 w-auto">
-            </div>
+<body class="max-w-[60em] mx-auto px-6 py-12 md:px-12 md:py-12">
 
-            <!-- Navigation Links -->
-            <ul class="flex gap-8">
-                <li><a href="#about"
-                       class="text-gray-900 hover:text-blue-600 font-medium transition-colors border-b-2 border-blue-600">About</a>
-                </li>
-                <li><a href="#projects" class="text-gray-600 hover:text-blue-600 font-medium transition-colors ">Projects</a>
-                </li>
-                <li><a href="#library" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">My
-                    Library</a>
-                </li>
-                <li><a href="#contact"
-                       class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
-                </li>
-            </ul>
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 mb-8">
+    <div class="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
+        <a th:href="@{/}" href="/" aria-label="Go to home" class="flex items-center gap-3">
+            <img th:src="@{/Erik_DEV.svg}" src="/Erik_DEV.svg" alt="Erik DEV"
+                 class="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-90 transition-opacity"/>
+        </a>
+
+        <button id="menuBtn" type="button"
+                class="md:hidden inline-flex items-center justify-center rounded-md border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                aria-controls="mobileMenu" aria-expanded="false">
+            <span class="sr-only">Open menu</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600">
+            <a href="#education" class="hover:text-black transition-colors">Education</a>
+            <a href="#projects" class="hover:text-black transition-colors">Projects</a>
+            <a href="#reading" class="hover:text-black transition-colors">Reading</a>
+            <a href="#contact" class="hover:text-black transition-colors">Contact</a>
+            <a th:href="@{/other}" href="/other" class="hover:text-black transition-colors">More</a>
+        </div>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+        <div class="flex flex-col gap-2 text-sm font-medium text-gray-700">
+            <a href="#education" class="py-2 border-t border-gray-100 hover:text-black">Education</a>
+            <a href="#projects" class="py-2 border-t border-gray-100 hover:text-black">Projects</a>
+            <a href="#reading" class="py-2 border-t border-gray-100 hover:text-black">Reading</a>
+            <a href="#contact" class="py-2 border-t border-gray-100 hover:text-black">Contact</a>
+            <a th:href="@{/other}" href="/other" class="py-2 border-t border-gray-100 hover:text-black">More</a>
         </div>
     </div>
 </nav>
 
-<!-- Main Content -->
-<main class="max-w-4xl mx-auto px-6 pb-20">
-    <!-- About Section -->
-    <section id="about" class="mb-20 scroll-mt-24">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">About</h2>
-        <p class="text-xl text-gray-700 leading-relaxed mb-6">
-            Hey, I'm <strong class="text-gray-900 font-semibold">Erik</strong>.
-            I'm a software engineer specializing in backend development with Java and Spring Boot.
-        </p>
+<p class="mt-6 mb-16 leading-relaxed text-gray-800">
+    Hello, I am Erik Vasquez, a Fullstack Engineer specializing in the Java and Spring Boot ecosystem.
+    I build scalable systems ranging from monolithic applications to distributed architectures.
+</p>
 
-        <p class="text-lg text-gray-600 leading-relaxed mb-6">
-            I build scalable systems ranging from monolithic applications to distributed microservices architectures.
-            My expertise includes Spring Boot, microservices design patterns, distributed computing, and cloud-native
-            application development.
-        </p>
+<h2 id="education" class="text-2xl font-bold mt-16 mb-6 scroll-mt-24">Education</h2>
+<div class="flex justify-between items-baseline">
+    <p class="font-bold text-lg">Kennesaw State University</p>
+    <p class="text-sm text-gray-600">Aug 2023 - Dec 2025</p>
+</div>
+<p>B.S. in Computer Science</p>
+<p class="text-gray-600 italic text-[0.9em] mt-1">
+    Relevant Coursework: Data Structures, Database Systems, Algorithm Analysis, Parallel and Distributed Computing,
+    Cloud Computing, Data Communications
+</p>
 
-        <p class="text-lg text-gray-600 leading-relaxed">
-            I enjoy solving complex engineering challenges, from implementing distributed algorithms to architecting
-            microservice ecosystems with service discovery, API gateways, and centralized configuration management.
-        </p>
+<div class="my-6">
+    <div class="flex justify-between items-baseline">
+        <p class="font-bold text-lg">Dalton State College</p>
+        <p class="text-sm text-gray-600">Aug 2020 - May 2023</p>
+    </div>
+    <p>A.S. in Science</p>
+</div>
 
-        <div class="mt-8 flex flex-wrap gap-3">
-            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Java</span>
-            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Spring Boot</span>
-            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Microservices</span>
-            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">Distributed Systems</span>
-            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">REST APIs</span>
-            <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">OAuth2/Keycloak</span>
-        </div>
-    </section>
+<h2 id="projects" class="text-2xl font-bold mt-16 mb-6 scroll-mt-24">Featured Projects</h2>
 
-    <!-- Featured Projects Section -->
-    <section id="projects" class="mb-20 scroll-mt-24">
-        <h2 class="text-3xl font-bold text-gray-900 mb-10 flex items-center">Featured Projects</h2>
+<h3 class="text-lg font-semibold mt-2 mb-4">Personal Projects</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
-        <div class="space-y-8">
-            <!-- Project 1: MicroBoot -->
-            <article
-                    class="border border-gray-200 rounded-xl p-8 bg-gradient-to-br from-white to-gray-50 hover:shadow-lg transition-all duration-300">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-2xl font-bold text-gray-900">MicroBoot</h3>
-                    <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold uppercase tracking-wide">In Progress</span>
-                </div>
-
-                <p class="text-gray-600 mb-4 text-lg font-medium">
-                    Microservice Project Generator
-                </p>
-
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    A Spring Boot application that generates customized microservice projects. Select the services you
-                    need
-                    (Gateway Server, Eureka Server, Config Server) and download a ready-to-use ZIP file.
-                </p>
-
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
-                    <p class="text-sm text-gray-700">
-                        <strong class="text-blue-700">Performance Optimization:</strong> Refactored from loading 500MB+
-                        files
-                        into memory to streaming in 8KB chunks, reducing memory usage by 99.99% and enabling concurrent
-                        downloads.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-4 mb-4">
-                    <div class="bg-gray-50 rounded-lg p-4">
-                        <h4 class="font-semibold text-gray-900 mb-2">Key Features</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• OAuth2 authentication with Keycloak</li>
-                            <li>• CRUD operations for blog posts</li>
-                            <li>• Comment system</li>
-                            <li>• Responsive Bootstrap 5 UI</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-4">
-                        <h4 class="font-semibold text-gray-900 mb-2">Tech Stack</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• HTML</li>
-                            <li>• CSS</li>
-                            <li>• Javascript</li>
-                            <li>• Java 25 & Spring Boot</li>
-                            <li>• Spring Security & JPA</li>
-                            <li>• Thymeleaf templating</li>
-                            <li>• MySQL/H2 database</li>
-                            <li>• Docker</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Spring Boot</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Microservices</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Streaming</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Code Generation</span>
-                </div>
-                <!--TODO change to live site-->
-                <a href="https://github.com/ErikV121/MicroBoot" target="_blank"
-                   class="inline-flex items-center px-6 py-3 border-2 border-blue-600 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white font-medium transition-all group">
-                    View Project
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                         stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
+    <div class="project-wrapper">
+        <div class="project-card flex flex-col">
+            <div class="project-card-media">
+                <a href="https://github.com/ErikV121/network-monitoring-system" target="_blank" rel="noreferrer">
+                    <img src="https://gh-card.dev/repos/ErikV121/network-monitoring-system.svg"
+                         alt="Network Monitoring System">
                 </a>
-            </article>
-
-            <!-- Project 2: Distributed Matrix Multiplication -->
-            <article
-                    class="border border-gray-200 rounded-xl p-8 bg-gradient-to-br from-white to-gray-50 hover:shadow-lg transition-all duration-300">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-2xl font-bold text-gray-900">Distributed Matrix Multiplication</h3>
-                    <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold uppercase tracking-wide">In Progress</span>
-                </div>
-
-                <p class="text-gray-600 mb-4 text-lg font-medium">
-                    Using Strassen's Algorithm
-                </p>
-
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    Implementation of Strassen's algorithm for matrix multiplication across distributed systems.
-                    Currently in V2 with major refactoring for improved code readability and modular design.
-                </p>
-
-                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-4">
-                    <p class="text-sm text-gray-700">
-                        <strong class="text-amber-700">Next Steps:</strong> Implementing dynamic workload allocation
-                        based on
-                        available worker nodes and improving performance through parallel processing across multiple
-                        computers.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-4 mb-4">
-                    <div class="bg-gray-50 rounded-lg p-4">
-                        <h4 class="font-semibold text-gray-900 mb-2">Key Features</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• Distributed Matrix Multiplication</li>
-                            <li>• Client-Server Architecture</li>
-                            <li>• Dynamic Task Distribution</li>
-                            <li>• Custom Protocol</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-4">
-                        <h4 class="font-semibold text-gray-900 mb-2">Tech Stack</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• Java 23</li>
-                            <li>• NIO API for networking</li>
-                            <li>• Multithreading & Parallel Processing</li>
-                            <li>• Socket Programming</li>
-                            <li>• Distributed Computing Concepts</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Java</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">NIO</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">IO</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Distributed Computing</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Algorithms</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Parallel Processing</span>
-                </div>
-
-                <a href="https://github.com/ErikV121/Distributed-Matrix-Multiplication-Using-Strassen-Algorithm"
-                   class="inline-flex items-center px-6 py-3 border-2 border-blue-600 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white font-medium transition-all group">
-                    View Project
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                         stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </article>
-
-            <!-- Project 3: Simple Blog App -->
-            <article
-                    class="border border-gray-200 rounded-xl p-8 bg-gradient-to-br from-white to-gray-50 hover:shadow-lg transition-all duration-300">
-                <div class="flex items-start justify-between mb-4">
-                    <h3 class="text-2xl font-bold text-gray-900">Simple Blog App</h3>
-                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold uppercase tracking-wide">Complete</span>
-                </div>
-
-                <p class="text-gray-600 mb-4 text-lg font-medium">
-                    Full-Stack Blog Platform with Keycloak Authentication
-                </p>
-
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    A monolithic web application built with Java 21 and Spring Boot featuring secure authentication via
-                    Keycloak (OAuth2/OpenID Connect), full blog post management, and an integrated commenting system
-                    with
-                    server-side rendering using Thymeleaf.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-4 mb-4">
-                    <div class="bg-gray-50 rounded-lg p-4">
-                        <h4 class="font-semibold text-gray-900 mb-2">Key Features</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• OAuth2 authentication with Keycloak</li>
-                            <li>• CRUD operations for blog posts</li>
-                            <li>• Comment system</li>
-                            <li>• Responsive Bootstrap 5 UI</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-4">
-                        <h4 class="font-semibold text-gray-900 mb-2">Tech Stack</h4>
-                        <ul class="text-sm text-gray-700 space-y-1">
-                            <li>• HTML</li>
-                            <li>• CSS</li>
-                            <li>• Javascript</li>
-                            <li>• Java 21 & Spring Boot</li>
-                            <li>• Spring Security & JPA</li>
-                            <li>• Thymeleaf templating</li>
-                            <li>• MySQL/H2 database</li>
-                            <li>• Docker</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Spring Boot</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Keycloak</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Thymeleaf</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">OAuth2</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">Spring Security</span>
-                </div>
-
-                <a href="https://github.com/ErikV121/Simple-Blog-App"
-                   class="inline-flex items-center px-6 py-3 border-2 border-blue-600 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white font-medium transition-all group">
-                    View on GitHub
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                         stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </article>
-        </div>
-    </section>
-
-    <!-- My Library Section -->
-    <section id="library" class="mb-20 scroll-mt-24">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">My Library</h2>
-        <p class="text-lg text-gray-600 mb-10">
-            Books I read on my free time to improve and grasp new concepts in software engineering, distributed systems,
-            and
-            computer science.
-        </p>
-
-        <div class="grid md:grid-cols-2 gap-6">
-            <article
-                    class="border border-gray-200 rounded-xl p-6 bg-gradient-to-br from-white to-gray-50 hover:shadow-lg transition-all duration-300 flex gap-4">
-                <!-- Book Cover Image -->
-                <div class="flex-shrink-0">
-                    <div class="w-24 h-32 bg-gray-200 rounded-lg overflow-hidden">
-                        <!-- Placeholder for book cover -->
-                        <img th:src="@{/effective_java.jpeg}" alt="Book Cover" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Book Details -->
-                <div class="flex-1">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Effective Java 3rd Edition</h3>
-                    <p class="text-sm text-gray-600 mb-2">by Joshua Bloch</p>
-                </div>
-            </article>
-
-
-            <article
-                    class="border border-gray-200 rounded-xl p-6 bg-gradient-to-br from-white to-gray-50 hover:shadow-lg transition-all duration-300 flex gap-4">
-                <!-- Book Cover Image -->
-                <div class="flex-shrink-0">
-                    <div class="w-24 h-32 bg-gray-200 rounded-lg overflow-hidden">
-                        <!-- Placeholder for book cover -->
-                        <img th:src="@{/Distributed_Computed.jpg}" alt="Book Cover" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Book Details -->
-                <div class="flex-1">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Distributed Computing Principles and
-                        Applications</h3>
-                    <p class="text-sm text-gray-600 mb-2">by M.L. Liu</p>
-                </div>
-            </article>
-
-
-            <article
-                    class="border border-gray-200 rounded-xl p-6 bg-gradient-to-br from-white to-gray-50 hover:shadow-lg transition-all duration-300 flex gap-4">
-                <!-- Book Cover Image -->
-                <div class="flex-shrink-0">
-                    <div class="w-24 h-32 bg-gray-200 rounded-lg overflow-hidden">
-                        <!-- Placeholder for book cover -->
-                        <img th:src="@{/Java_Conccurency.jpg}" alt="Book Cover" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Book Details -->
-                <div class="flex-1">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Java Concurrency in Practice 1st Edition</h3>
-                    <p class="text-sm text-gray-600 mb-2">by Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer,
-                        David Holmes & Doug Lea</p>
-                </div>
-            </article>
-
-
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-10 scroll-mt-24">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Let's Talk</h2>
-        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-center">
-            I'm always interested in hearing about new projects and opportunities.
-            Whether you have a question or just want to say hi, feel free to reach out!
-        </p>
-
-        <!-- Success/Error Message Display -->
-        <div th:if="${message}"
-             th:classappend="${#strings.contains(message, 'success') or #strings.contains(message, 'Successfully')} ? 'bg-green-100 border-green-400 text-green-700' : 'bg-red-100 border-red-400 text-red-700'"
-             class="max-w-2xl mx-auto mb-6 px-4 py-3 rounded-lg border"
-             role="alert">
-            <p th:text="${message}"></p>
-        </div>
-
-        <!-- Contact Form -->
-        <form action="/sendMail" method="POST" class="max-w-2xl mx-auto space-y-6">
-            <div>
-                <label for="recipient" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                <input
-                        type="email"
-                        id="recipient"
-                        name="recipient"
-                        required
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="johndoe@example.com"
-                >
             </div>
-
-            <div>
-                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        required
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="Project inquiry, collaboration, etc."
-                >
-            </div>
-
-            <div>
-                <label for="body" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea
-                        id="body"
-                        name="body"
-                        required
-                        rows="6"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                        placeholder="Your message here..."
-                ></textarea>
-            </div>
-
-            <div class="text-center">
-                <button
-                        type="submit"
-                        class="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
-                >
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                    </svg>
-                    Send Message
-                </button>
-            </div>
-        </form>
-    </section>
-</main>
-
-<!-- Footer -->
-<footer class="max-w-4xl mx-auto px-6 py-12 mt-20 border-t border-gray-200">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-gray-600 text-sm">
-            &copy; 2025 Erik DEV. All rights reserved.
-        </p>
-        <div class="flex gap-6">
-            <a href="https://github.com/ErikV121" target="_blank"
-               class="text-gray-600 hover:text-gray-900 transition-colors">
-                <span class="sr-only">GitHub</span>
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd"
-                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                          clip-rule="evenodd"></path>
+            <button type="button"
+                    class="project-toggle self-center inline-flex items-center gap-2 mt-2 rounded-md border border-gray-200 hover:bg-gray-50"
+                    onclick="toggleProject('network')">
+                <span class="text-[0.72rem] font-medium text-gray-700">View Details</span>
+                <svg id="arrow-network" class="expand-arrow w-3 h-3 text-gray-500" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
-            </a>
-            <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">
-                <span class="sr-only">LinkedIn</span>
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-                </svg>
+            </button>
+        </div>
+
+        <div id="details-network" class="project-details rounded-lg">
+            <h3 class="text-lg font-bold mb-2">Network Monitoring System</h3>
+            <p class="text-gray-700 mb-3 text-sm">
+                A real-time network monitoring dashboard that captures network activity and streams live metrics to the
+                UI.
+                Tracks upload/download throughput and packet loss using Pcap4J and WebSockets.
+            </p>
+            <p class="text-gray-600 italic text-xs mb-3">
+                Tech: Java 17, Spring Boot, WebSockets, Pcap4J, HTML, CSS, Javascript, Chart.js
+            </p>
+            <p class="font-semibold text-sm mb-1">Highlights:</p>
+            <ul class="list-disc pl-5 mb-3 text-gray-700 text-sm space-y-1">
+                <li>Live dashboard with real-time charts</li>
+                <li>WebSocket-based packet streaming</li>
+                <li>Simple Connect/Play/Pause flow</li>
+            </ul>
+            <a href="https://github.com/ErikV121/network-monitoring-system" target="_blank" rel="noreferrer"
+               class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm">
+                View on GitHub →
             </a>
         </div>
     </div>
-</footer>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    <div class="project-wrapper">
+        <div class="project-card flex flex-col">
+            <div class="project-card-media">
+                <a href="https://github.com/ErikV121/Erik-DEV" target="_blank" rel="noreferrer">
+                    <img src="https://gh-card.dev/repos/ErikV121/Erik-DEV.svg" alt="Erik-DEV Portfolio">
+                </a>
+            </div>
+            <button type="button"
+                    class="project-toggle self-center inline-flex items-center gap-2 mt-2 rounded-md border border-gray-200 hover:bg-gray-50"
+                    onclick="toggleProject('erikdev')">
+                <span class="text-[0.72rem] font-medium text-gray-700">View Details</span>
+                <svg id="arrow-erikdev" class="expand-arrow w-3 h-3 text-gray-500" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+        </div>
 
-        function highlightNavLink() {
-            let scrollPosition = window.scrollY + 150;
+        <div id="details-erikdev" class="project-details rounded-lg">
+            <h3 class="text-lg font-bold mb-2">Erik-DEV (Portfolio Website)</h3>
+            <p class="text-gray-700 mb-3 text-sm">
+                The codebase for this portfolio site. Built as a clean, single-page experience with Spring Boot +
+                Thymeleaf.
+            </p>
+            <p class="text-gray-600 italic text-xs mb-3">
+                Tech: Java, Spring Boot, Thymeleaf, Tailwind CSS, HTML, JavaScript
+            </p>
+            <p class="font-semibold text-sm mb-1">Highlights: </p>
+            <ul class="list-disc pl-5 mb-3 text-gray-700 text-sm space-y-1">
+                <li>Clean navigation and fast scanning</li>
+                <li>Expandable project cards</li>
+                <li>Easy to extend via Spring MVC</li>
+            </ul>
+            <a href="https://github.com/ErikV121/Erik-DEV" target="_blank" rel="noreferrer"
+               class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm">
+                View on GitHub →
+            </a>
+        </div>
+    </div>
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
+    <div class="project-wrapper">
+        <div class="project-card flex flex-col">
+            <div class="project-card-media">
+                <a href="https://github.com/ErikV121/MicroBoot" target="_blank" rel="noreferrer">
+                    <img src="https://gh-card.dev/repos/ErikV121/MicroBoot.svg" alt="MicroBoot Generator">
+                </a>
+            </div>
+            <button type="button"
+                    class="project-toggle self-center inline-flex items-center gap-2 mt-2 rounded-md border border-gray-200 hover:bg-gray-50"
+                    onclick="toggleProject('microboot')">
+                <span class="text-[0.72rem] font-medium text-gray-700">View Details</span>
+                <svg id="arrow-microboot" class="expand-arrow w-3 h-3 text-gray-500" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+        </div>
 
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('border-b-2', 'border-blue-600', 'text-gray-900');
-                        link.classList.add('text-gray-600');
+        <div id="details-microboot" class="project-details rounded-lg">
+            <div class="details-stack">
+                <img th:src="@{/MicroBoot.png}" src="/MicroBoot.png" alt="MicroBoot Generator"
+                     class="w-full max-w-xl mx-auto h-auto rounded-lg border border-gray-200 zoomable-image">
+                <div>
+                    <h3 class="text-lg font-bold">MicroBoot Generator</h3>
+                    <p class="text-gray-700 text-sm mt-2">
+                        A Spring Boot generator creating production-ready microservice architectures with custom
+                        boilerplate for infrastructure and business services.
+                    </p>
+                </div>
 
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('border-b-2', 'border-blue-600', 'text-gray-900');
-                            link.classList.remove('text-gray-600');
-                        }
-                    });
-                }
-            });
-        }
-        window.addEventListener('scroll', highlightNavLink);
-    });
-</script>
+                <p class="text-gray-700 text-sm">
+                    <strong>Performance:</strong> Refactored from 500MB+ memory loading to 8KB streaming chunks.
+                </p>
+
+                <div>
+                    <p class="font-semibold text-sm mb-1">Features:</p>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Infrastructure Gen (Gateway, Eureka, Config)</li>
+                        <li>Docker Configs (Keycloak, Postgres, Grafana)</li>
+                    </ul>
+                </div>
+
+                <p class="text-gray-600 italic text-xs">
+                    Tech: Java (NIO API), Spring Boot, Spring Cloud, Keycloak, Docker, HTML, CSS, JavaScript
+                </p>
+
+                <a href="https://github.com/ErikV121/MicroBoot" target="_blank" rel="noreferrer"
+                   class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm">
+                    View on GitHub →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-wrapper">
+        <div class="project-card flex flex-col">
+            <div class="project-card-media">
+                <a href="https://github.com/ErikV121/Distributed-Matrix-Multiplication-Using-Strassen-Algorithm"
+                   target="_blank" rel="noreferrer">
+                    <img src="https://gh-card.dev/repos/ErikV121/Distributed-Matrix-Multiplication-Using-Strassen-Algorithm.svg"
+                         alt="Distributed Matrix Multiplication">
+                </a>
+            </div>
+            <button type="button"
+                    class="project-toggle self-center inline-flex items-center gap-2 mt-2 rounded-md border border-gray-200 hover:bg-gray-50"
+                    onclick="toggleProject('matrix')">
+                <span class="text-[0.72rem] font-medium text-gray-700">View Details</span>
+                <svg id="arrow-matrix" class="expand-arrow w-3 h-3 text-gray-500" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="details-matrix" class="project-details rounded-lg">
+            <div class="details-stack">
+                <img th:src="@{/DistributedMatrix.png}" src="/DistributedMatrix.png"
+                     alt="Distributed Matrix Multiplication"
+                     class="w-full max-w-xl mx-auto h-auto rounded-lg border border-gray-200 zoomable-image">
+
+                <div>
+                    <h3 class="text-lg font-bold">Distributed Matrix Multiplication</h3>
+                    <p class="text-gray-700 text-sm mt-2">
+                        Implementation of Strassen's algorithm for matrix multiplication across distributed systems.
+                        V2 provides dynamic workload allocation based on available worker nodes.
+                    </p>
+                </div>
+
+                <p class="text-gray-600 italic text-xs">
+                    Tech: Java, NIO/IO API, Socket Programming, Multithreading, Maven, Log4J
+                </p>
+
+                <a href="https://github.com/ErikV121/Distributed-Matrix-Multiplication-Using-Strassen-Algorithm"
+                   target="_blank" rel="noreferrer"
+                   class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm">
+                    View on GitHub →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-wrapper">
+        <div class="project-card flex flex-col">
+            <div class="project-card-media">
+                <a href="https://github.com/ErikV121/Simple-Blog-App" target="_blank" rel="noreferrer">
+                    <img src="https://gh-card.dev/repos/ErikV121/Simple-Blog-App.svg" alt="Simple Blog App">
+                </a>
+            </div>
+            <button type="button"
+                    class="project-toggle self-center inline-flex items-center gap-2 mt-2 rounded-md border border-gray-200 hover:bg-gray-50"
+                    onclick="toggleProject('blog')">
+                <span class="text-[0.72rem] font-medium text-gray-700">View Details</span>
+                <svg id="arrow-blog" class="expand-arrow w-3 h-3 text-gray-500" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="details-blog" class="project-details rounded-lg">
+            <h3 class="text-lg font-bold mb-2">Simple Blog App</h3>
+            <p class="text-gray-700 mb-3 text-sm">
+                Full-stack blog platform with Keycloak authentication (OAuth2/OpenID Connect), complete blog post
+                management, and integrated commenting system.
+            </p>
+            <p class="text-gray-700 mb-3 text-sm">
+                <strong>Features:</strong> CRUD operations, OAuth2 security, and responsive Bootstrap 5 UI.
+            </p>
+            <p class="text-gray-600 italic text-xs mb-3">
+                Tech: Spring Boot, Keycloak, Thymeleaf, JPA, MySQL, Docker, Spring Security, Bootstrap 5, HTML, CSS
+            </p>
+            <a href="https://github.com/ErikV121/Simple-Blog-App" target="_blank" rel="noreferrer"
+               class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm">
+                View on GitHub →
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<h3 class="text-lg font-semibold mt-8 mb-4">Group Projects</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <div class="project-wrapper">
+        <div class="project-card flex flex-col">
+            <div class="project-card-media">
+                <a href="https://github.com/YetronLives/StudentLink" target="_blank" rel="noreferrer">
+                    <img src="https://gh-card.dev/repos/YetronLives/StudentLink.svg" alt="StudentLink">
+                </a>
+            </div>
+            <button type="button"
+                    class="project-toggle self-center inline-flex items-center gap-2 mt-2 rounded-md border border-gray-200 hover: bg-gray-50"
+                    onclick="toggleProject('studentlink')">
+                <span class="text-[0.72rem] font-medium text-gray-700">View Details</span>
+                <svg id="arrow-studentlink" class="expand-arrow w-3 h-3 text-gray-500" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="details-studentlink" class="project-details rounded-lg">
+            <h3 class="text-lg font-bold mb-2">StudentLink</h3>
+            <p class="text-gray-700 mb-3 text-sm">
+                A collaborative Cloud based platform designed to help students organize, manage, and showcase their academic and
+                personal projects in one place.
+            </p>
+            <p class="text-gray-600 italic text-xs mb-2">
+                Tech: Next.js, HTML, CSS, JavaScript
+            </p>
+            <p class="text-gray-600 italic text-xs mb-3">
+                Cloud: AWS (S3, Lambda, IAM, API Gateway, DynamoDB, Amplify)
+            </p>
+            <a href="https://github.com/YetronLives/StudentLink" target="_blank" rel="noreferrer"
+               class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm">
+                View on GitHub →
+            </a>
+        </div>
+    </div>
+
+    <div class="project-wrapper">
+        <div class="project-card flex flex-col">
+            <div class="project-card-media">
+                <a href="https://github.com/KSU-LCP/LCP" target="_blank" rel="noreferrer">
+                    <img src="https://gh-card.dev/repos/KSU-LCP/LCP.svg" alt="LCP">
+                </a>
+            </div>
+            <button type="button"
+                    class="project-toggle self-center inline-flex items-center gap-2 mt-2 rounded-md border border-gray-200 hover:bg-gray-50"
+                    onclick="toggleProject('lcp')">
+                <span class="text-[0.72rem] font-medium text-gray-700">View Details</span>
+                <svg id="arrow-lcp" class="expand-arrow w-3 h-3 text-gray-500" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="details-lcp" class="project-details rounded-lg">
+            <h3 class="text-lg font-bold mb-2">LCP (League Coaching Platform)</h3>
+            <p class="text-gray-700 mb-3 text-sm">
+                A modern web app that helps League of Legends players improve by letting them search a Riot account,
+                view match history and performance dashboards, and receive coaching insights based on recent games.
+            </p>
+            <p class="text-gray-600 italic text-xs mb-3">
+                Tech: React/Next.js, Supabase, TailwindCSS, TypeScript, PostgreSQL, Riot API
+            </p>
+            <a href="https://github.com/KSU-LCP/LCP" target="_blank" rel="noreferrer"
+               class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm">
+                View on GitHub →
+            </a>
+        </div>
+    </div>
+
+    <div class="project-wrapper">
+        <div class="project-card flex flex-col">
+            <div class="project-card-media p-4 flex items-center justify-center border border-gray-200 rounded-md bg-gray-50">
+                <div class="text-center">
+                    <p class="font-semibold text-gray-900 text-sm mb-1">Chess Master Scheduling System</p>
+                    <p class="text-xs text-gray-500">(repo N\A)</p>
+                </div>
+            </div>
+            <button type="button"
+                    class="project-toggle self-center inline-flex items-center gap-2 mt-2 rounded-md border border-gray-200 hover:bg-gray-50"
+                    onclick="toggleProject('chess')">
+                <span class="text-[0.72rem] font-medium text-gray-700">View Details</span>
+                <svg id="arrow-chess" class="expand-arrow w-3 h-3 text-gray-500" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="details-chess" class="project-details rounded-lg">
+            <h3 class="text-lg font-bold mb-2">Chess Master Scheduling System</h3>
+            <p class="text-gray-700 mb-3 text-sm">
+                Team-built scheduling and workflow system coordinating match schedules and participant availability.
+            </p>
+
+            <p class="text-gray-600 italic text-xs mb-3">
+                Tech: Java 8, Java FX, Scene Builder, CSS
+            </p>
+
+            <p class="text-gray-600 italic text-xs">
+                Note: Repository unavailable, but happy to discuss architecture
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<h2 id="reading" class="text-2xl font-bold mt-16 mb-6 scroll-mt-24">Reading</h2>
+
+<details class="my-4 py-2">
+    <summary><em>Effective Java</em> by Joshua Bloch</summary>
+    <div class="ml-6 mt-2">
+        <div class="overflow-visible my-4">
+            <img th:src="@{/effective_java.jpeg}" src="/effective_java. jpeg"
+                 alt="Effective Java"
+                 class="max-w-[200px] border border-gray-200 zoomable-image">
+        </div>
+        <p class="my-4">
+            A guide to Java programming best practices.
+            Honestly covers a lot of topics that I may not come across day to day but are very useful to refer to.
+            10/10 recommend to all Java developer but to a certain extent.
+        </p>
+    </div>
+</details>
+
+<details class="my-4 py-2">
+    <summary><em>Distributed Computing: Principles and Applications</em> by M. L. Liu</summary>
+    <div class="ml-6 mt-2">
+        <div class="overflow-visible my-4">
+            <img th:src="@{/Distributed_Computed.jpg}"
+                 alt="Distributed Computing"
+                 class="max-w-[200px] border border-gray-200 zoomable-image">
+        </div>
+        <p class="my-4">
+            Provides an introduction to distributed computing concepts, distributed systems architecture, and real-world
+            applications.
+            10/10 for anyone learning distributed systems.
+            This book was what sparked my interest more into distributed systems.
+        </p>
+    </div>
+</details>
+
+<details class="my-4 py-2">
+    <summary><em>Java Concurrency in Practice</em> by Brian Goetz</summary>
+    <div class="ml-6 mt-2">
+        <div class="overflow-visible my-4">
+            <img th:src="@{/Java_Conccurency.jpg}"
+                 alt="Java Concurrency in Practice"
+                 class="max-w-[200px] border border-gray-200 zoomable-image">
+        </div>
+        <p class="my-4">
+            The essential guide to writing thread-safe Java programs. Covers the Java Memory Model, concurrent
+            collections,
+            and best practices for parallel programming.
+        </p>
+    </div>
+</details>
+
+<h2 id="contact" class="text-2xl font-bold mt-16 mb-6 scroll-mt-24">Contact</h2>
+
+<p class="my-4">
+    I'm always interested in hearing about new projects and opportunities. Feel free to reach out using the form below.
+</p>
+
+<div th:if="${message}" class="my-4 p-4 rounded border"
+     th:classappend="${message. contains('Successfully')} ? 'bg-green-50 border-green-300 text-green-800' : 'bg-red-50 border-red-300 text-red-800'">
+    <p th:text="${message}"></p>
+</div>
+
+<form action="/sendMail" method="POST" class="my-6 space-y-4">
+    <div>
+        <label for="sender" class="block font-bold mb-1">Email Address</label>
+        <input type="email" id="sender" name="sender" required placeholder="your.email@example.com"
+               class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent">
+    </div>
+
+    <div>
+        <label for="subject" class="block font-bold mb-1">Subject</label>
+        <input type="text" id="subject" name="subject" required placeholder="Project inquiry, collaboration, etc."
+               class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 focus: border-transparent">
+    </div>
+
+    <div>
+        <label for="body" class="block font-bold mb-1">Message</label>
+        <textarea id="body" name="body" required rows="6" placeholder="Your message here..."
+                  class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 focus: border-transparent resize-y"></textarea>
+    </div>
+
+    <div class="text-right">
+        <button type="submit"
+                class="px-6 py-2 bg-gray-900 text-white font-bold rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-colors">
+            Send Message
+        </button>
+    </div>
+</form>
+
+<hr class="my-8">
+
+<p class="text-center text-sm text-gray-600">
+    © 2025 Erik DEV. All rights reserved.
+</p>
+
+<div id="imageOverlay" class="image-overlay" onclick="closeImageOverlay()">
+    <button type="button" class="overlay-close" aria-label="Close image">×</button>
+    <img id="overlayImage" src="" alt="Zoomed image">
+</div>
+
+<script th:src="@{/script.js}"></script>
 </body>
 </html>
