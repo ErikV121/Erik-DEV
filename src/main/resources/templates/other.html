@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>More About Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" th:href="@{/main.css}"/>
+</head>
+
+<body class="max-w-[60em] mx-auto px-6 py-12 md:px-12 md:py-12 bg-white text-gray-900">
+
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 mb-8">
+    <div class="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
+        <a th:href="@{/}" href="/" aria-label="Go to home" class="flex items-center gap-3">
+            <img th:src="@{/Erik_DEV.svg}" src="/Erik_DEV.svg" alt="Erik DEV"
+                 class="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-90 transition-opacity"/>
+        </a>
+
+        <button id="menuBtn"
+                class="md:hidden inline-flex items-center justify-center rounded-md border border-gray-200 p-2 text-gray-700 hover:bg-gray-50"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600">
+            <a th:href="@{/#education}" href="/#education" class="hover:text-black transition-colors">Education</a>
+            <a th:href="@{/#projects}" href="/#projects" class="hover:text-black transition-colors">Projects</a>
+            <a th:href="@{/#reading}" href="/#reading" class="hover:text-black transition-colors">Reading</a>
+            <a th:href="@{/#contact}" href="/#contact" class="hover:text-black transition-colors">Contact</a>
+            <a th:href="@{/other}" href="/other" class="hover:text-black" aria-current="page">More</a>
+        </div>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+        <div class="flex flex-col gap-3 text-sm font-medium text-gray-700">
+            <a th:href="@{/#education}" href="/#education" class="hover:text-black">Education</a>
+            <a th:href="@{/#projects}" href="/#projects" class="hover:text-black">Projects</a>
+            <a th:href="@{/#reading}" href="/#reading" class="hover:text-black">Reading</a>
+            <a th:href="@{/#contact}" href="/#contact" class="hover:text-black">Contact</a>
+            <a th:href="@{/other}" href="/other" class="hover:text-black" aria-current="page">More</a>
+        </div>
+    </div>
+</nav>
+
+
+<main class="space-y-16">
+
+    <section class="bg-white rounded-xl p-6">
+        <h2 class="text-3xl font-bold">More About Me</h2>
+        <p class="text-gray-700 mt-4">
+            Here are some additional details about my current learning journey, hobbies, and upcoming challenges.
+            I believe in continuous growth and embracing new experiences both professionally and personally.
+    </section>
+
+    <section class="bg-white rounded-xl p-6">
+        <h2 class="text-2xl font-bold mb-3">What I’m Learning Right Now</h2>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li><span class="font-semibold">Java FFM API</span> (Foreign Function &amp; Memory) - understanding native
+                interop, memory segments, and safe performance patterns.
+            </li>
+            <li><span class="font-semibold">Multithreading</span> - better concurrency patterns, debugging races, and
+                writing safer parallel code.
+            </li>
+            <li><span class="font-semibold">Spring Boot refinement</span> - improving integration techniques,
+                readability, structure, and overall maintainability.
+            </li>
+        </ul>
+    </section>
+
+    <section class="bg-white rounded-xl p-6">
+        <h2 class="text-2xl font-bold mb-3">Hobbies</h2>
+        <p class="text-gray-700 mb-6">
+            I’m really into <span class="font-semibold">hiking</span> and <span class="font-semibold">walking</span>.
+            Getting outside helps me reset and stay consistent with my health.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+                <img th:src="@{/waterfall.jpg}" src="waterfall.jpg" alt="Cloudland Canyon waterfall"
+                     class="w-full h-64 object-cover"/>
+                <figcaption class="p-4 text-sm text-gray-700">
+                    <span class="font-semibold">Cloudland Canyon State Park, Waterfall.</span>
+                    This waterfall helps clear my mind of any worries, and it motivates me to walk several miles from
+                    the start to the waterfall to get my steps in.
+                </figcaption>
+            </figure>
+
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+                <img th:src="@{/summer_cloudland.jpg}" src="summer_cloudland.jpg" alt="Cloudland Canyon summer view"
+                     class="w-full h-64 object-cover"/>
+                <figcaption class="p-4 text-sm text-gray-700">
+                    <span class="font-semibold">Cloudland Canyon State Park, Summer views.</span>
+                    A reminder that the best views usually come after putting in the effort.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="bg-white rounded-xl p-6">
+        <h2 class="text-2xl font-bold mb-3">Next Challenge</h2>
+        <p class="text-gray-700">
+            My next goal is <span class="font-semibold">Vogel State Park</span>, near the Appalachian Mountains.
+            I’m aiming for a <span class="font-semibold">~13 mile</span> hike and I’m really looking forward to it.
+            I’m preparing myself physically, mentally, and making sure I’m geared up for the full distance.
+        </p>
+    </section>
+
+</main>
+
+<hr class="my-8">
+
+<p class="text-center text-sm text-gray-600">
+    © 2025 Erik DEV. All rights reserved.
+</p>
+
+<script th:src="@{/other.js}"></script>
+</body>
+</html>
