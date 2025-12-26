@@ -2,4 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html {
+        @apply text-[20px] leading-relaxed;
+    }
+    body {
+        @apply font-serif text-gray-900 bg-[#fdfdfd] hyphens-auto antialiased;
+    }
+    a {
+        @apply text-gray-900 hover:underline;
+    }
+    a:visited {
+        @apply text-gray-900;
+    }
+}
 
+summary {
+    @apply cursor-pointer font-bold select-none hover:underline;
+}
+
+details[open] summary {
+    @apply mb-2;
+}
+
+.zoomable-image {
+    @apply transition-transform duration-300 ease-in-out cursor-zoom-in;
+}
+
+.zoomable-image:hover {
+    @apply scale-[3] z-50 shadow-2xl;
+}
